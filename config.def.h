@@ -1,7 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-//#include "dwm_config_pulseaudio.h" 
-
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 5;        /* gaps size between windows */
@@ -18,11 +16,12 @@ static const char col_gray1[]       = "#222222";//background color
 static const char col_gray2[]       = "#444444";//inactive window border color
 static const char col_gray3[]       = "#bbbbbb";//font color
 static const char col_gray4[]       = "#eeeeee";//current tag and current window font color
-static const char col_cyan[]        = "#005577";//Top bar second color (blue) and active window border color
-static const char *colors[][3]      = {
+static const char col_cyan[]        = "#005577";//top bar second color (blue)
+static const char col_red[] 	    = "#770000";//active window border color
+static const char *colors[][4]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_red  },
 };
 
 /* tagging */
@@ -34,8 +33,12 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Steam",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox", 	NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Steam", 	NULL,       NULL,       0,            1,           -1 },
+	{ "Zoom",      	NULL,       NULL,       0,            1,           -1 },
+	{ "Cadence", 	NULL,       NULL,       0,            1,           -1 },
+	{ "mpv", 	NULL,       NULL,       0,            1,           -1 },
+	{ "pcmanfm", 	NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
