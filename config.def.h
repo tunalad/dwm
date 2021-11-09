@@ -67,6 +67,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *jgmenucmd[]  = { "jgmenu_run", NULL };
 
 #include "dwm-shiftview.c"
 static Key keys[] = {
@@ -125,5 +126,7 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkWinTitle, 		0, 		Button3, 	spawn, {.v = jgmenucmd } },
+	{ ClkRootWin,  		0, 		Button3, 	spawn, {.v = jgmenucmd } },
 };
 
