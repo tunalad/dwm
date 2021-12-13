@@ -10,7 +10,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=12", "JoyPixels:pixelsize=12" };
+static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";//background color
 static const char col_gray2[]       = "#444444";//inactive window border color
@@ -32,11 +32,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Firefox", 	NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Steam", 	NULL,       NULL,       0,            1,           -1 },
-	{ "Cadence", 	NULL,       NULL,       0,            1,           -1 },
-	{ "SpeedCrunch", NULL,       NULL,       0,            1,           -1 },
+	/* class 		instance    title       tags mask     isfloating   monitor */
+	{ "Firefox", 		NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Steam", 		NULL,       NULL,       0,            1,           -1 },
+	{ "Cadence", 		NULL,       NULL,       0,            1,           -1 },
+	{ "SpeedCrunch", 	NULL,       NULL,       0,            1,           -1 },
+	{ "Bluetooth Devices", 	NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -69,7 +70,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *jgmenucmd[]  = { "jgmenu_run", NULL };
 
-#include "dwm-shiftview.c"
+#include "patches/dwm-movestack.c"
+#include "patches/dwm-shiftview.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
@@ -99,6 +101,24 @@ static Key keys[] = {
 	{ MODKEY,             		XK_b,  	   shiftview,      {.i = -1 } },
 	{ MODKEY,             		XK_n, 	   shiftview,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+	{ MODKEY,                       XK_Down,   moveresize,     {.v = "0x 25y 0w 0h" } },
+	{ MODKEY,                       XK_Up,     moveresize,     {.v = "0x -25y 0w 0h" } },
+	{ MODKEY,                       XK_Right,  moveresize,     {.v = "25x 0y 0w 0h" } },
+	{ MODKEY,                       XK_Left,   moveresize,     {.v = "-25x 0y 0w 0h" } },
+	{ MODKEY|ShiftMask,             XK_Down,   moveresize,     {.v = "0x 0y 0w 25h" } },
+	{ MODKEY|ShiftMask,             XK_Up,     moveresize,     {.v = "0x 0y 0w -25h" } },
+	{ MODKEY|ShiftMask,             XK_Right,  moveresize,     {.v = "0x 0y 25w 0h" } },
+	{ MODKEY|ShiftMask,             XK_Left,   moveresize,     {.v = "0x 0y -25w 0h" } },
+	{ MODKEY|ControlMask,           XK_Up,     moveresizeedge, {.v = "t"} },
+	{ MODKEY|ControlMask,           XK_Down,   moveresizeedge, {.v = "b"} },
+	{ MODKEY|ControlMask,           XK_Left,   moveresizeedge, {.v = "l"} },
+	{ MODKEY|ControlMask,           XK_Right,  moveresizeedge, {.v = "r"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Up,     moveresizeedge, {.v = "T"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Down,   moveresizeedge, {.v = "B"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Left,   moveresizeedge, {.v = "L"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Right,  moveresizeedge, {.v = "R"} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
