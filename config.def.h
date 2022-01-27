@@ -28,7 +28,7 @@ static const char *colors[][4]      = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
 
 /* environment vars */ 
-#define TERMINAL_ENVVAR "TERM"
+#define TERMINAL_ENVVAR "TERMINAL"
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -37,7 +37,7 @@ static const Rule rules[] = {
 	 */
 	/* class 		instance    title       tags mask     isfloating   monitor */
 	{ "Firefox", 		NULL,       NULL,       1 << 8,       0,           -1 },
-	{ NULL, 		NULL,       "Discord",       1 << 9,       0,           -1 },
+	{ NULL, 		NULL,       "Discord",  1 << 9,       0,           -1 },
 	{ "Steam", 		NULL,       NULL,       0,            1,           -1 },
 	{ "Cadence", 		NULL,       NULL,       0,            1,           -1 },
 	{ "SpeedCrunch", 	NULL,       NULL,       0,            1,           -1 },
