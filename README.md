@@ -7,6 +7,7 @@
 - `libx11`
 - `libxft`
 - `libxinerama`
+- `xorg-xkbcomp`
 
 ## Installaion
 ```
