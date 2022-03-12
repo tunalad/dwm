@@ -2,7 +2,7 @@
 "dwm is an extremely fast, small, and dynamic window manager for X". Until I patched the hell out of it! It's still pretty fast tho, just not as small I guess.
 
 ## Requirements
-- set $TERMINAL environment variable
+- set `$TERMINAL` environment variable
 - monospaced font (`adobe-source-code-pro-fonts`)
 - `libx11`
 - `libxft`
