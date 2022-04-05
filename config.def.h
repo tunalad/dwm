@@ -41,7 +41,7 @@ static const Rule rules[] = {
 	{ "Steam", 		NULL, 		NULL, 		1 << 7, 	1, 		-1 },
 	{ "Cadence", 		NULL, 		NULL, 		0, 		1, 		-1 },
 	{ "SpeedCrunch", 	NULL, 		NULL, 		0, 		1, 		-1 },
-	{ "Bluetooth Devices", 	NULL, 		NULL, 		0, 		1, 		-1 },
+	{ "Lingot", 		NULL, 		NULL, 		0, 		1, 		-1 },
 };
 
 /* layout(s) */
@@ -123,6 +123,9 @@ static Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_Down,   moveresizeedge, {.v = "B"} },
 	{ MODKEY|ControlMask|ShiftMask, XK_Left,   moveresizeedge, {.v = "L"} },
 	{ MODKEY|ControlMask|ShiftMask, XK_Right,  moveresizeedge, {.v = "R"} },
+
+	{ MODKEY|ShiftMask, 		XK_space,  togglealwaysontop, 	{0} },
+
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
