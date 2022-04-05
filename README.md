@@ -19,6 +19,7 @@ sudo make clean install
 ## Patches applied
 - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
 - [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/)
+- [alwaysontop](https://dwm.suckless.org/patches/alwaysontop/)
 - [attachbottom](https://dwm.suckless.org/patches/attachbottom/)
 - [autostart](https://dwm.suckless.org/patches/autostart/)
 - [environmentvars](https://dwm.suckless.org/patches/environmentvars/)
