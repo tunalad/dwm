@@ -30,3 +30,4 @@ sudo make clean install
 - [pertag](https://dwm.suckless.org/patches/pertag/)
 - [shiftview](https://lists.suckless.org/dev/1104/7590.html)
 - [systray](https://dwm.suckless.org/patches/systray/)
+- [stackmfact](https://dwm.suckless.org/patches/stackmfact/)
