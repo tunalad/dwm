@@ -2221,15 +2221,15 @@ tile(Monitor *m)
 			if(h < minwsz) {
 				c->isfloating = True;
 				XRaiseWindow(dpy, c->win);
-				resize(c, m->mx + (m->mw / 2 - WIDTH(c) / 2), m->my + (m->mh / 2 - (HEIGHT(c) + m->gapp) / 2), m->ww - mw - (2*c->bw), h - (2*c->bw), False);
-				ty -= HEIGHT(c) + m->gapp;
+				resize(c, m->mx + (m->mw / 2 - WIDTH(c) / 2), m->my + (m->mh / 2 - (HEIGHT(c) + m->gappx) / 2), m->ww - mw - (2*c->bw), h - (2*c->bw), False);
+				ty -= HEIGHT(c) + m->gappx;
 			}
 			else
 				resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), False);
 			if(!(nexttiled(c->next)))
-				ty += HEIGHT(c) + m->gapp + smh;
+				ty += HEIGHT(c) + m->gappx + smh;
 			else
-				ty += HEIGHT(c) + m->gapp;
+				ty += HEIGHT(c) + m->gappx;
 		}
 }
 
