@@ -11,8 +11,8 @@ static const int systraypinningfailfirst = 1;       /* 1: if pinning fails, disp
 static const int showsystray        = 1;     	    /* 0 means no systray */
 static const int showbar            = 1;            /* 0 means no bar */
 static const int topbar             = 1;            /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "DejaVu Sans Mono:size=10", "fontawesome:size=10" };
+static const char dmenufont[]       = "DejaVu Sans Mono:size=10";
 static const char col_gray1[]       = "#222222";    //background color
 static const char col_gray2[]       = "#444444";    //inactive window border color
 static const char col_gray3[]       = "#bbbbbb";    //font color
@@ -39,7 +39,8 @@ static const Rule rules[] = {
 	/* class 		instance 	title 		tags mask 	isfloating 	monitor */
 	{ "Firefox", 		NULL, 		NULL, 		1 << 8, 	0, 		-1 },
 	{ NULL, 		NULL, 		"Ferdi", 	1 << 9, 	0, 		-1 },
-	{ "Steam", 		NULL, 		NULL, 		1 << 7, 	1, 		-1 },
+	{ "Steam", 		NULL, 		NULL, 		1 << 7, 	1, 		-1 }, // older steam
+	{ "steamwebhelper", 	NULL, 		NULL,           1 << 7, 	0, 		-1 }, // later steam
 	{ "Cadence", 		NULL, 		NULL, 		0, 		1, 		-1 },
 	{ "SpeedCrunch", 	NULL, 		NULL, 		0, 		1, 		-1 },
 	{ "Lingot", 		NULL, 		NULL, 		0, 		1, 		-1 },
@@ -104,7 +105,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
-//	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+	//{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
@@ -112,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,             		XK_b,  	   shiftview,      {.i = -1 } },
 	{ MODKEY,             		XK_n, 	   shiftview,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	//{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_Down,   moveresize,     {.v = "0x 25y 0w 0h" } },
