@@ -324,7 +324,7 @@ static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
 
 /* configuration, allows nested code to access above variables */
-#include "config.h"
+#include "../config.h"
 
 struct Pertag {
 	unsigned int curtag, prevtag; /* current and previous tag */

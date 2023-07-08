@@ -79,8 +79,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 // static const char *termcmd[]  = { "alacritty", NULL };
 static const char *jgmenucmd[]  = { "jgmenu_run", NULL };
 
-#include "dwm-movestack.c"
-#include "dwm-shiftview.c"
+#include "src/dwm-movestack.c"
+#include "src/dwm-shiftview.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
