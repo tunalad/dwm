@@ -3,11 +3,10 @@
 
 ## Requirements
 - set `$TERMINAL` environment variable
-- monospaced font (`adobe-source-code-pro-fonts`)
+- monospaced font (`ttf-dejavu`)
 - `libx11`
 - `libxft`
 - `libxinerama`
-- `xorg-xkbcomp`
 
 ## Installaion
 ```
@@ -23,6 +22,7 @@ sudo make clean install
 - [attachbottom](https://dwm.suckless.org/patches/attachbottom/)
 - [autostart](https://dwm.suckless.org/patches/autostart/)
 - [environmentvars](https://dwm.suckless.org/patches/environmentvars/)
+- [fixborders](https://dwm.suckless.org/patches/alpha/)
 - [focusonnetactive](https://dwm.suckless.org/patches/focusonnetactive/)
 - [fullgaps](https://dwm.suckless.org/patches/fullgaps/)
 - [moveresize](https://dwm.suckless.org/patches/moveresize/)
