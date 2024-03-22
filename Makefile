@@ -6,13 +6,7 @@ include config.mk
 SRC = src/drw.c src/dwm.c src/util.c
 OBJ = ${SRC:.c=.o}
 
-all: options dwm
-
-options:
-	@echo dwm build options:
-	@echo "CFLAGS   = ${CFLAGS}"
-	@echo "LDFLAGS  = ${LDFLAGS}"
-	@echo "CC       = ${CC}"
+all: dwm
 
 .c.o:
 	${CC} -c ${CFLAGS} $< -o $@
@@ -48,4 +42,4 @@ uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm \
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
 
-.PHONY: all options clean dist install uninstall
+.PHONY: all clean dist install uninstall

@@ -85,7 +85,7 @@ static const char *jgmenucmd[]  = { "jgmenu_run", NULL };
 
 #include "src/dwm-movestack.c"
 #include "src/dwm-shiftview.c"
-static Key keys[] = {
+static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } }, // spawn dmenu
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd} }, // spawn $TERMINAL
@@ -174,7 +174,7 @@ static Key keys[] = {
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
-static Button buttons[] = {
+static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
         // tag bar
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
