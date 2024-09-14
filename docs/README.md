@@ -28,6 +28,7 @@ sudo make clean install
 - [moveresize](https://dwm.suckless.org/patches/moveresize/)
 - [movestack](https://dwm.suckless.org/patches/movestack/)
 - [pertag](https://dwm.suckless.org/patches/pertag/)
+- [setstatus](https://dwm.suckless.org/patches/setstatus/)
 - [shiftview](https://lists.suckless.org/dev/1104/7590.html)
 - [systray](https://dwm.suckless.org/patches/systray/)
 - [stackmfact](https://dwm.suckless.org/patches/stackmfact/)
