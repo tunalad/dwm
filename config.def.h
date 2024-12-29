@@ -84,6 +84,7 @@ static const Layout layouts[] = {
 static char dmenumon[2]			= "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]	= { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 //static const char *termcmd[]	= { "alacritty", NULL };
+static const char *doccmd[] = { "/bin/sh", "-c", "$TERMINAL -e man dwm", NULL };
 static const char *jgmenucmd[]	= { "jgmenu_run", NULL };
 
 #include "src/dwm-movestack.c"
@@ -92,6 +93,7 @@ static const Key keys[] = {
 	/* modifier						key			function			argument */
 	{ MODKEY,						XK_r,		spawn,				{.v = dmenucmd } }, // spawn dmenu
 	{ MODKEY,						XK_Return,	spawn,				{.v = termcmd} }, // spawn $TERMINAL
+	{ MODKEY,						XK_F1,		spawn,				{.v = doccmd} }, // spawn $TERMINAL and run `man dwm`
 	{ MODKEY|ShiftMask,				XK_b,		togglebar,			{0} }, // toggle bar
 
 	// shift focus between windows

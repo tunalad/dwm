@@ -5,7 +5,7 @@ dwm \- dynamic window manager
 
 .SH SYNOPSIS
 .B dwm
-.RB [ \-v ]
+.RB [ \-v ] [ -s \ STATUS ]
 
 .SH DESCRIPTION
 dwm is a dynamic window manager for X. It manages windows in tiled, monocle
@@ -43,176 +43,195 @@ dwm enters its handler loop.
 Either of these files may be omitted.
 
 .SH OPTIONS
+
 .TP
 .B \-v
 prints version information to stderr, then exits.
 
+.TP
+.B \-s STATUS
+set the status message to STATUS. It supports command output and doesn't require restarting dwm(1).
+
+
 .SH USAGE
+
+.SS Environment variables
+
+.TP
+.B $TERMINAL
+specify a terminal emulator here. It is required and dwm(1) won't start without it.
 
 .SS Keyboard commands
 
 .TP
-.B Mod4\-Return
+.B Mod4 + F1
+Spawn
+.BR $TERMINAL
+and open man pages for
+.BR dmenu(1).
+
+.TP
+.B Mod4 + Return
 Spawn
 .BR $TERMINAL.
 If not set, you should have it set to your favourite terminal emulator.
 
 .TP
-.B Mod4\-r
+.B Mod4 + r
 Spawn
 .BR dmenu(1),
 for launching other programs.
 
 .TP
-.B Mod4\-Shift\-b
+.B Mod4 + Shift + b
 Toggles bar on and off.
 
 .TP
-.B Mod4\-,
+.B Mod4 + ,
 Focus previous screen, if any.
 
 .TP
-.B Mod4\-.
+.B Mod4 + .
 Focus next screen, if any.
 
 .TP
-.B Mod4\-Shift-,
+.B Mod4 + Shift + ,
 Send focused window to previous screen, if any.
 
 .TP
-.B Mod4\-Shift-.
+.B Mod4 + Shift + .
 Send focused window to next screen, if any.
 
 .TP
-.B Mod4\-t
+.B Mod4 + t
 Sets tiled layout.
 
 .TP
-.B Mod4\-f
+.B Mod4 + f
 Sets floating layout.
 
 .TP
-.B Mod4\-m
+.B Mod4 + m
 Sets monocle layout.
 
 .TP
-.B Mod4\-space
+.B Mod4 + space
 Toggles between current and previous layout.
 
 .TP
-.B Mod4\-j
+.B Mod4 + j
 Focus next window.
 
 .TP
-.B Mod4\-k
+.B Mod4 + k
 Focus previous window.
 
 .TP
-.B Mod4\-n
+.B Mod4 + n
 View next tag.
 
 .TP
-.B Mod4\-b
+.B Mod4 + b
 View previous tag.
 
 .TP
-.B Mod4\-Shift-k
+.B Mod4 + Shift + k
 Move focused window next in stack.
 
 .TP
-.B Mod4\-Shift-j
+.B Mod4 + Shift + j
 Move focused window back in stack.
 
 .TP
-.B Mod4\-i
+.B Mod4 + i
 Increase number of windows in master area.
 
 .TP
-.B Mod4\-d
+.B Mod4 + d
 Decrease number of windows in master area.
 
 .TP
-.B Mod4\-l
+.B Mod4 + l
 Increase master area size.
 
 .TP
-.B Mod4\-h
+.B Mod4 + h
 Decrease master area size.
 
 .TP
-.B Mod4\-q
+.B Mod4 + q
 Close focused window.
 
 .TP
-.B Mod4\-Shift-enter
+.B Mod4 + Shift + enter
 Focused window moves to master.
 
 .TP
-.B Mod4\-Shift-f
+.B Mod4 + Shift + f
 Fullscreen focused window.
 
 .TP
-.B Mod4\-Shift-space
+.B Mod4 + Shift + space
 Set focused window on top of every other.
 
 .TP
-.B Mod4\-Tab
+.B Mod4 + Tab
 Toggles to the previously selected tags.
 
 .TP
-.B Mod4\-Control-Shift-f
+.B Mod4 + Control + Shift + f
 Toggle floating state for focused window
 
 .TP
-.B Mod4\-Shift-[0..n]
+.B Mod4 + Shift + [0..n]
 Move focused window to nth tag.
 
 .TP
-.B Mod4\-Control-Shift-[0..n]
+.B Mod4 + Control + Shift + [0..n]
 Adds/removes focused window to nth tag.
 
 .TP
-.B Mod4\-[0..n]
+.B Mod4 + [0..n]
 View all windows with nth tag.
 
 .TP
-.B Mod4\-Control-[0..n]
+.B Mod4 + Control + [0..n]
 show/hide all windows on current and nth tag.
 
 .TP
-.B Mod4\-[ARROW KEY]
+.B Mod4 + [ARROW KEY]
 Move focused tiled window in the arrow's direction.
 
 .TP
-.B Mod4\-Shift-[ARROW KEY]
+.B Mod4 + Shift + [ARROW KEY]
 Resize focused tiled window in the arrow's direction.
 
 .TP
-.B Mod4\-Control-[ARROW KEY]
+.B Mod4 + Control + [ARROW KEY]
 Move focused tiled window in the corner of arrow's direction.
 
 .TP
-.B Mod4\-Control-Shift-[ARROW KEY]
+.B Mod4 + Control + Shift + [ARROW KEY]
 Resize focused tiled window in the corner of arrow's direction.
 
 .TP
-.B Mod4\-Shift-q
+.B Mod4 + Shift + q
 Kill dwm.
 
 
 .SS Mouse commands
 
 .TP
-.B Mod4\-Button1
+.B Mod4 + Button1
 Move focused window while dragging. Tiled windows will be toggled to the
 floating state.
 
 .TP
-.B Mod4\-Button2
+.B Mod4 + Button2
 Toggles focused window between floating and tiled state.
 
 .TP
-.B Mod4\-Button3
+.B Mod4 + Button3
 Resize focused window while dragging. Tiled windows will be toggled to
 the floating state.
 
@@ -247,11 +266,11 @@ shows all windows on clicked tag.
 show/hide all windows on current and clicked tag. Spawns **jgmenu**(1), if installed, by clicking anywhere else.
 
 .TP
-.B Mod4\-Button1
+.B Mod4 + Button1
 moves focused window on clicked tag.
 
 .TP
-.B Mod4\-Button3
+.B Mod4 + Button3
 adds/removes focused window on clicked tag.
 
 .SH FILES
