@@ -1,7 +1,9 @@
 # tunalad's EPIC dwm fork
+
 "dwm is an extremely fast, small, and dynamic window manager for X". Until I patched the hell out of it! It's still pretty fast tho, just not as small I guess.
 
 ## Requirements
+
 - set `$TERMINAL` environment variable
 - monospaced font (`ttf-dejavu`)
 - `libx11`
@@ -9,6 +11,7 @@
 - `libxinerama`
 
 ## Installaion
+
 ```
 git clone https://github.com/tunalad/dwm.git
 cd dwm
@@ -16,11 +19,13 @@ sudo make clean install
 ```
 
 ## Patches applied
+
 - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/)
 - [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/)
 - [alwaysontop](https://dwm.suckless.org/patches/alwaysontop/)
 - [attachbottom](https://dwm.suckless.org/patches/attachbottom/)
 - [autostart](https://dwm.suckless.org/patches/autostart/)
+- [borderrule](https://dwm.suckless.org/patches/borderrule/)
 - [environmentvars](https://dwm.suckless.org/patches/environmentvars/)
 - [fixborders](https://dwm.suckless.org/patches/alpha/)
 - [focusonnetactive](https://dwm.suckless.org/patches/focusonnetactive/)
