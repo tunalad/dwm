@@ -38,23 +38,21 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class			instance 	title 		tags mask 	isfloating 	monitor border width */
-	{ NULL,				NULL, 		NULL,		0,			0,			-1,			-1 },
-	{ "Firefox",		NULL, 		NULL,		1 << 8, 	0,			-1,			-1 },
-	{ NULL,				NULL, 		"Ferdi",	1 << 9, 	0, 			-1,			-1 },
-	{ "Steam",			NULL, 		NULL, 		1 << 7, 	1, 			-1,			-1 }, // older steam
-	{ "steamwebhelper", NULL, 		NULL,		1 << 7, 	0, 			-1,			-1 }, // later steam
-	{ "Cadence", 		NULL, 		NULL, 		0,			1, 			-1,			-1 },
-	{ "SpeedCrunch", 	NULL, 		NULL, 		0,			1, 			-1,			-1 },
-	{ "Lingot", 		NULL,		NULL, 		0,			1, 			-1,			-1 },
-	{ "ROX-Filer",		NULL,		NULL, 		0, 			1, 			-1,			-1 },
-	{ NULL,				"Ripcord",	NULL, 		1 << 9, 	0, 			-1,			-1 },
-	{ "webamp-desktop", NULL,		NULL, 		0,			1, 			-1,			-1 },
-	{ "megasync",		NULL,		NULL, 		0,			1, 			-1,			-1 },
-	{ "Godot_Engine",   NULL,		NULL, 		0,			1, 			-1,			-1 },
-	{ "zenity", 		NULL,		NULL, 		0,			1, 			-1,			-1 },
-	{ "audacious",		NULL, 		NULL,		0,			0,			-1,			 0 },
-	{ "Audacious",		NULL, 		NULL,		0,			0,			-1,			 0 },
+	/* class			instance 	title 		tags mask 	isfloating 	monitor */
+	{ NULL,				NULL, 		NULL,		0,			0,			-1 },
+	{ "Firefox",		NULL, 		NULL,		1 << 8, 	0,			-1 },
+	{ NULL,				NULL, 		"Ferdi",	1 << 9, 	0, 			-1 },
+	{ "Steam",			NULL, 		NULL, 		1 << 7, 	1, 			-1 }, // older steam
+	{ "steamwebhelper", NULL, 		NULL,		1 << 7, 	0, 			-1 }, // later steam
+	{ "Cadence", 		NULL, 		NULL, 		0,			1, 			-1 },
+	{ "SpeedCrunch", 	NULL, 		NULL, 		0,			1, 			-1 },
+	{ "Lingot", 		NULL,		NULL, 		0,			1, 			-1 },
+	{ "ROX-Filer",		NULL,		NULL, 		0, 			1, 			-1 },
+	{ NULL,				"Ripcord",	NULL, 		1 << 9, 	0, 			-1 },
+	{ "webamp-desktop", NULL,		NULL, 		0,			1, 			-1 },
+	{ "megasync",		NULL,		NULL, 		0,			1, 			-1 },
+	{ "Godot_Engine",   NULL,		NULL, 		0,			1, 			-1 },
+	{ "zenity", 		NULL,		NULL, 		0,			1, 			-1 },
 };
 
 /* layout(s) */

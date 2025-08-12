@@ -25,7 +25,6 @@ sudo make clean install
 - [alwaysontop](https://dwm.suckless.org/patches/alwaysontop/)
 - [attachbottom](https://dwm.suckless.org/patches/attachbottom/)
 - [autostart](https://dwm.suckless.org/patches/autostart/)
-- [borderrule](https://dwm.suckless.org/patches/borderrule/)
 - [environmentvars](https://dwm.suckless.org/patches/environmentvars/)
 - [fixborders](https://dwm.suckless.org/patches/alpha/)
 - [focusonnetactive](https://dwm.suckless.org/patches/focusonnetactive/)
