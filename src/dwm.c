@@ -565,9 +565,11 @@ cleanup(void)
 	}
 	for (i = 0; i < CurLast; i++)
 		drw_cur_free(drw, cursor[i]);
-	for (i = 0; i < LENGTH(colors); i++)
+	for (i = 0; i < LENGTH(colors); i++) {
+		drw_scm_free(drw, scheme[i], 3);
 		free(scheme[i]);
-        free(scheme);
+	}
+	free(scheme);
 	XDestroyWindow(dpy, wmcheckwin);
 	drw_free(drw);
 	XSync(dpy, False);
