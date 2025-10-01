@@ -122,7 +122,7 @@ static const Key keys[] = {
 	{ MODKEY,						XK_space,	setlayout,			{0} }, // toggle between current and previous layout
 	//{ MODKEY|ShiftMask,				XK_space,  togglefloatin	g, {0} }, // toggle floating for a window (maybe better than making everything float?)
 	{ MODKEY|ShiftMask,				XK_f,		togglefullscr,  	{0} }, // toggle fullscreen mode
-	//{ MODKEY,						XK_0,		view,				{.ui = ~0 } }, // show all windows
+	{ MODKEY,						XK_a,		view,				{.ui = ~0 } }, // show all windows
 	{ MODKEY|ShiftMask,				XK_0,		tag,				{.ui = ~0 } }, // fix to mod+shift+0 (I think xd)
 
 	// shift focus between monitors and move windows between them
