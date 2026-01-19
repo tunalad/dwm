@@ -30,7 +30,7 @@ dist: clean
 	gzip dwm-${VERSION}.tar
 	rm -rf dwm-${VERSION}
 
-install: all
+install: all install-desktop
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
@@ -38,8 +38,13 @@ install: all
 	sed "s/VERSION/${VERSION}/g" < docs/dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
 
+install-desktop:
+	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
+	cp dwm.desktop $(DESTDIR)$(PREFIX)/share/applications
+
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm \
-		${DESTDIR}${MANPREFIX}/man1/dwm.1
+		${DESTDIR}${MANPREFIX}/man1/dwm.1 \
+		${DESTDIR}${PREFIX}/share/applications/dwm.desktop
 
-.PHONY: all clean dist install uninstall
+.PHONY: all clean dist install install-desktop uninstall
