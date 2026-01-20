@@ -40,11 +40,11 @@ install: all install-desktop
 
 install-desktop:
 	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
-	cp dwm.desktop $(DESTDIR)$(PREFIX)/share/applications
+	cp dwm.desktop $(DESTDIR)$(PREFIX)/share/xsessions/
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm \
 		${DESTDIR}${MANPREFIX}/man1/dwm.1 \
-		${DESTDIR}${PREFIX}/share/applications/dwm.desktop
+		${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop
 
 .PHONY: all clean dist install install-desktop uninstall
