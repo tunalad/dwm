@@ -2111,12 +2111,32 @@ setup(void)
 	for (i = 0; i < LENGTH(colors); i++)
 		scheme[i] = drw_scm_create(drw, colors[i], 3);
 
-	/* init root color */
-	Colormap cmap = DefaultColormap(dpy, screen);
-	XColor color;
-	XAllocNamedColor(dpy, cmap, col_root, &color, &color);
-	XSetWindowBackground(dpy, root, color.pixel);
-	XClearWindow(dpy, root);
+	/* init root color, unless a wallpaper is already set */
+	Atom pmapatom = XInternAtom(dpy, "_XROOTPMAP_ID", True);
+	Atom esetroot = XInternAtom(dpy, "ESETROOT_PMAP_ID", True);
+	Atom type;
+	int format;
+	unsigned long nitems, left;
+	unsigned char *data = NULL;
+	int haswallpaper = 0;
+
+	if ((pmapatom && XGetWindowProperty(dpy, root, pmapatom, 0L, 1L, False,
+			XA_PIXMAP, &type, &format, &nitems, &left, &data) == Success
+			&& type == XA_PIXMAP && data)
+	|| (esetroot && XGetWindowProperty(dpy, root, esetroot, 0L, 1L, False,
+			XA_PIXMAP, &type, &format, &nitems, &left, &data) == Success
+			&& type == XA_PIXMAP && data))
+		haswallpaper = 1;
+	if (data)
+		XFree(data);
+
+	if (!haswallpaper) {
+		Colormap cmap = DefaultColormap(dpy, screen);
+		XColor color;
+		XAllocNamedColor(dpy, cmap, col_root, &color, &color);
+		XSetWindowBackground(dpy, root, color.pixel);
+		XClearWindow(dpy, root);
+	}
 
 	/* init system tray */
 	updatesystray();
