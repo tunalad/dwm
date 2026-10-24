@@ -1278,6 +1278,12 @@ manage(Window w, XWindowAttributes *wa)
 	arrange(c->mon);
 	XMapWindow(dpy, c->win);
 	focus(NULL);
+	XSync(dpy, False);
+	{
+		XWindowAttributes chk;
+		if (!XGetWindowAttributes(dpy, c->win, &chk))
+		unmanage(c, 1);
+	}
 }
 
 void
